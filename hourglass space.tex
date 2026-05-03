@@ -1,0 +1,1716 @@
+%
+%    hourglass space  © 2026.5.4 by YoonKi Kim is licensed under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/
+%
+
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage[a4paper,margin=1in]{geometry}
+
+\title{hourglass space}
+
+\author{YoonKi Kim}
+
+\date{2026.5.4}
+
+\begin{document}
+
+\maketitle
+
+\[
+\textbf{Goal:}
+\qquad
+H_{R,\rho}^{\mathrm{phys}}(t)
+\ge
+\sigma R\,I,
+\qquad
+E_0^{\mathrm{phys}}(R,t)
+\ge
+\sigma R.
+\]
+
+\[
+\text{Here}
+\qquad
+\sigma
+=
+\frac{g^2c_{\mathrm{geo}}C_2(\rho)}{2A_\ast}
+>0.
+\]
+
+\[
+\text{The charged sources are implemented as finite-dimensional endpoint representation factors,}
+\]
+\[
+\text{not as singular point-source insertions in the gauge-field sector.}
+\]
+
+\[
+\text{Consequently no source self-energy counterterm appears,}
+\qquad
+\kappa_\Lambda=\kappa=0.
+\]
+
+\bigskip
+
+\[
+\textbf{1. Hourglass geometry.}
+\]
+
+\[
+T_\ast>0,
+\qquad
+\rho:[-T_\ast,T_\ast]\to(0,\infty),
+\qquad
+\rho(-t)=\rho(t),
+\qquad
+\rho \text{ Lipschitz},
+\qquad
+\rho \text{ nondecreasing on }[0,T_\ast].
+\]
+
+\[
+\Omega_{\mathrm{hg}}
+:=
+\left\{
+(t,x)\in \mathbb R\times\mathbb R^3:
+|t|<T_\ast,\ |x|<\rho(|t|)
+\right\}.
+\]
+
+\[
+\Omega_+:=\Omega_{\mathrm{hg}}\cap\{t>0\},
+\qquad
+\Omega_-:=\Omega_{\mathrm{hg}}\cap\{t<0\},
+\qquad
+\Sigma_0:=\Omega_{\mathrm{hg}}\cap\{t=0\}.
+\]
+
+\[
+\tau:\Omega_{\mathrm{hg}}\to\Omega_{\mathrm{hg}},
+\qquad
+\tau(t,x)=(-t,x).
+\]
+
+\[
+\tau^2=\mathrm{Id},
+\qquad
+\tau(\Omega_+)=\Omega_-,
+\qquad
+\tau(\Omega_-)=\Omega_+,
+\qquad
+\tau(\Sigma_0)=\Sigma_0.
+\]
+
+\bigskip
+
+\[
+\textbf{2. Forward and backward time flows.}
+\]
+
+\[
+\Phi_u^+:\Omega_+\supset D_u^+\to\Omega_+,
+\qquad
+\Phi_u^+(t,x)
+=
+\left(
+t+u,\,
+\frac{\rho(t+u)}{\rho(t)}x
+\right),
+\]
+
+\[
+D_u^+
+:=
+\{(t,x)\in\Omega_+:\ t+u<T_\ast\}.
+\]
+
+\[
+|x|<\rho(t)
+\Longrightarrow
+\left|
+\frac{\rho(t+u)}{\rho(t)}x
+\right|
+<
+\rho(t+u).
+\]
+
+\[
+\Phi_u^-:=\tau\circ\Phi_u^+\circ\tau.
+\]
+
+\[
+\Phi_u^-(t,x)
+=
+\left(
+t-u,\,
+\frac{\rho(|t-u|)}{\rho(|t|)}x
+\right),
+\qquad
+(t<0).
+\]
+
+\[
+\tau\circ\Phi_u^+=\Phi_u^-\circ\tau.
+\]
+
+\[
+\Phi_{u+v}^+=\Phi_u^+\circ\Phi_v^+,
+\qquad
+\Phi_{u+v}^-=\Phi_u^-\circ\Phi_v^-.
+\]
+
+\[
+\Phi_u^+(\Phi_v^+(t,x))
+=
+\left(
+t+u+v,\,
+\frac{\rho(t+u+v)}{\rho(t+v)}
+\frac{\rho(t+v)}{\rho(t)}x
+\right)
+=
+\left(
+t+u+v,\,
+\frac{\rho(t+u+v)}{\rho(t)}x
+\right)
+=
+\Phi_{u+v}^+(t,x).
+\]
+
+\bigskip
+
+\[
+\textbf{3. Time operators and reflection.}
+\]
+
+\[
+(T_u^\pm f)(z):=f(\Phi_u^\pm(z)).
+\]
+
+\[
+\mathbb T_u^\pm A:=(\Phi_u^\pm)^\ast A.
+\]
+
+\[
+\Theta A:=\tau^\ast A.
+\]
+
+\[
+(\Theta A)_0(t,x)=-A_0(-t,x),
+\qquad
+(\Theta A)_j(t,x)=A_j(-t,x),
+\qquad
+j=1,2,3.
+\]
+
+\[
+\Theta\,\mathbb T_u^+=\mathbb T_u^-\,\Theta.
+\]
+
+\[
+\Theta\,\mathbb T_u^+
+=
+\tau^\ast(\Phi_u^+)^\ast
+=
+(\Phi_u^+\circ\tau)^\ast
+=
+(\tau\circ\Phi_u^-)^\ast
+=
+(\Phi_u^-)^\ast\tau^\ast
+=
+\mathbb T_u^-\,\Theta.
+\]
+
+\bigskip
+
+\[
+\textbf{4. Operator-path measure.}
+\]
+
+\[
+G\subset U(N),
+\qquad
+\mathfrak g\subset\mathfrak u(N),
+\qquad
+\mathcal A_{\mathrm{hg}}^s
+:=
+H^s(\Omega_{\mathrm{hg}};\mathfrak g\otimes\mathbb R^4),
+\qquad
+s>2.
+\]
+
+\[
+(\chi_n)_{n\ge1}
+\subset
+L^2(\mathbb R^3;\mathfrak g\otimes\mathbb R^4)
+\quad
+\text{orthonormal}.
+\]
+
+\[
+c_n(t;A)
+:=
+\int_{|x|<\rho(|t|)}
+\langle A(t,x),\chi_n(x)\rangle\,dx.
+\]
+
+\[
+v_A(t):=\sum_{n=1}^\infty c_n(t;A)e_n
+\in
+K:=\ell^2(\mathbb N)
+\quad
+\text{for a.e. }t.
+\]
+
+\[
+\Gamma_A(t)(\lambda u_X):=\lambda\,v_A(t).
+\]
+
+\[
+\mu(dA)=Z^{-1}e^{-V(A)}\,\gamma_Q(dA).
+\]
+
+\[
+\nu_{\mathrm{op}}
+:=
+(\Gamma_\bullet)_\#\mu.
+\]
+
+\[
+\Gamma_T:\mathcal A\to C([-T,T];\mathcal A),
+\qquad
+\Gamma_T(A)(t):=U_tA.
+\]
+
+\[
+\nu_T:=(\Gamma_T)_\#\mu.
+\]
+
+\[
+\mathrm{ev}_t:C([-T,T];\mathcal A)\to\mathcal A,
+\qquad
+\mathrm{ev}_t(\gamma)=\gamma(t).
+\]
+
+\[
+\mathrm{ev}_t\circ\Gamma_T=U_t.
+\]
+
+\[
+\nu_T(B)=\mu(\Gamma_T^{-1}(B)).
+\]
+
+\[
+\Theta_\#\mu=\mu,
+\qquad
+(\mathfrak R\gamma)(t):=\Theta\gamma(-t).
+\]
+
+\[
+\mathfrak R(\Gamma_T(A))(t)
+=
+\Theta(U_{-t}A)
+=
+\Theta(\Theta U_t\Theta A)
+=
+U_t(\Theta A)
+=
+\Gamma_T(\Theta A)(t).
+\]
+
+\[
+\mathfrak R\circ\Gamma_T=\Gamma_T\circ\Theta.
+\]
+
+\[
+\mathfrak R_\#\nu_T
+=
+\mathfrak R_\#(\Gamma_T)_\#\mu
+=
+(\Gamma_T)_\#\Theta_\#\mu
+=
+(\Gamma_T)_\#\mu
+=
+\nu_T.
+\]
+
+\bigskip
+
+\[
+\textbf{5. Wilson holonomy reflection identity.}
+\]
+
+\[
+A=\sum_{\mu=0}^3A_\mu\,dx^\mu,
+\qquad
+\gamma:[0,1]\to\Omega_{\mathrm{hg}}
+\quad
+\text{piecewise absolutely continuous}.
+\]
+
+\[
+B_{A,\gamma}(s)
+:=
+\sum_{\mu=0}^3A_\mu(\gamma(s))\dot\gamma^\mu(s).
+\]
+
+\[
+B_{A,\gamma}(s)\in\mathfrak u(N)
+\quad
+\text{for a.e. }s.
+\]
+
+\[
+\frac{d}{ds}U_{A,\gamma}(s)
+=
+-\,B_{A,\gamma}(s)\,U_{A,\gamma}(s),
+\qquad
+U_{A,\gamma}(0)=I_N.
+\]
+
+\[
+\gamma^\Theta(s):=\tau(\gamma(1-s)).
+\]
+
+\[
+\dot\gamma^{\Theta,0}(s)=\dot\gamma^0(1-s),
+\qquad
+\dot\gamma^{\Theta,j}(s)=-\dot\gamma^j(1-s),
+\qquad
+j=1,2,3.
+\]
+
+\[
+B_{\Theta A,\gamma^\Theta}(s)
+=
+(\Theta A)_0(\gamma^\Theta(s))\dot\gamma^{\Theta,0}(s)
++
+\sum_{j=1}^3
+(\Theta A)_j(\gamma^\Theta(s))\dot\gamma^{\Theta,j}(s)
+\]
+
+\[
+=
+\bigl(-A_0(\gamma(1-s))\bigr)\dot\gamma^0(1-s)
++
+\sum_{j=1}^3
+A_j(\gamma(1-s))\bigl(-\dot\gamma^j(1-s)\bigr)
+\]
+
+\[
+=
+-\,\sum_{\mu=0}^3A_\mu(\gamma(1-s))\dot\gamma^\mu(1-s)
+=
+-\,B_{A,\gamma}(1-s).
+\]
+
+\[
+V(s):=U_{A,\gamma}(1-s)\,U_{A,\gamma}(1)^{-1}.
+\]
+
+\[
+\frac{d}{ds}V(s)
+=
+B_{A,\gamma}(1-s)V(s)
+=
+-\,B_{\Theta A,\gamma^\Theta}(s)V(s),
+\qquad
+V(0)=I_N.
+\]
+
+\[
+U_{\Theta A,\gamma^\Theta}(s)=V(s).
+\]
+
+\[
+U_{\Theta A,\gamma^\Theta}(1)
+=
+U_{A,\gamma}(1)^{-1}
+=
+U_{A,\gamma}(1)^\ast.
+\]
+
+\[
+W_\gamma(A):=\frac1N\mathrm{Tr}\bigl(U_{A,\gamma}(1)\bigr).
+\]
+
+\[
+W_{\gamma^\Theta}(\Theta A)
+=
+\frac1N\mathrm{Tr}\bigl(U_{\Theta A,\gamma^\Theta}(1)\bigr)
+=
+\frac1N\mathrm{Tr}\bigl(U_{A,\gamma}(1)^\ast\bigr)
+=
+\overline{W_\gamma(A)}.
+\]
+
+\[
+U_{\Theta A,\gamma^\Theta}
+=
+U_{A,\gamma}^{-1}
+=
+U_{A,\gamma}^\ast,
+\qquad
+W_{\gamma^\Theta}(\Theta A)=\overline{W_\gamma(A)}.
+\]
+
+\bigskip
+
+\[
+\textbf{6. Gaussian reflection positivity.}
+\]
+
+\[
+\mathcal H:=L^2(\Omega_{\mathrm{hg}};\mathfrak g\otimes\mathbb R^4),
+\qquad
+\mathcal H_+
+:=
+\{f\in\mathcal H:\ \mathrm{supp}(f)\subset\overline{\Omega_+}\}.
+\]
+
+\[
+\gamma_Q=N(0,Q),
+\qquad
+Q\Theta=\Theta Q,
+\qquad
+\langle f,Q\Theta f\rangle_{\mathcal H}\ge0
+\quad
+(\forall f\in\mathcal H_+).
+\]
+
+\[
+\mathcal E_f(A)
+:=
+\exp\!\left(
+i\langle A,f\rangle+\frac12\langle f,Qf\rangle
+\right).
+\]
+
+\[
+\int \overline{\mathcal E_{\Theta f}(A)}\,\mathcal E_g(A)\,d\gamma_Q(A)
+=
+\exp\!\bigl(\langle f,Q\Theta g\rangle\bigr).
+\]
+
+\[
+M_{ij}:=\langle f_i,Q\Theta f_j\rangle,
+\qquad
+f_1,\dots,f_m\in\mathcal H_+.
+\]
+
+\[
+\sum_{i,j=1}^m\overline{c_i}c_jM_{ij}
+=
+\left\langle
+\sum_i c_if_i,\,
+Q\Theta\left(\sum_j c_jf_j\right)
+\right\rangle
+\ge0.
+\]
+
+\[
+(M_{ij})_{i,j=1}^m\ge0.
+\]
+
+\[
+\bigl(e^{M_{ij}}\bigr)_{i,j=1}^m\ge0.
+\]
+
+\[
+F=\sum_{j=1}^m c_j\mathcal E_{f_j}.
+\]
+
+\[
+\int \overline{F(\Theta A)}\,F(A)\,d\gamma_Q(A)
+=
+\sum_{i,j=1}^m\overline{c_i}c_j e^{M_{ij}}
+\ge0.
+\]
+
+\bigskip
+
+\[
+\textbf{7. OS reconstruction of the transfer Hamiltonian.}
+\]
+
+\[
+\mathfrak A_+
+\quad
+\text{positive-time observable algebra}.
+\]
+
+\[
+\langle F,G\rangle_{\mathrm{OS}}
+:=
+\int \overline{F(\Theta A)}\,G(A)\,d\mu(A).
+\]
+
+\[
+\langle F,F\rangle_{\mathrm{OS}}\ge0
+\qquad
+(\forall F\in\mathfrak A_+).
+\]
+
+\[
+\mathcal N
+:=
+\{F\in\mathfrak A_+:\ \langle F,F\rangle_{\mathrm{OS}}=0\}.
+\]
+
+\[
+\mathcal H_{\mathrm{phys}}
+:=
+\overline{\mathfrak A_+/\mathcal N}^{\ \|\cdot\|_{\mathrm{OS}}}.
+\]
+
+\[
+(S_tF)(A):=F(U_tA),
+\qquad
+t\ge0.
+\]
+
+\[
+\widehat S_t[F]:=[S_tF].
+\]
+
+\[
+\Theta U_t\Theta=U_{-t}.
+\]
+
+\[
+\langle \widehat S_t[F],[G]\rangle_{\mathrm{phys}}
+=
+\langle [F],\widehat S_t[G]\rangle_{\mathrm{phys}}.
+\]
+
+\[
+\|\widehat S_t\|\le1.
+\]
+
+\[
+\widehat S_t=e^{-tH},
+\qquad
+H=H^\ast,
+\qquad
+H\ge0.
+\]
+
+\bigskip
+
+\[
+\textbf{8. Cutoff-free physical charged sector.}
+\]
+
+\[
+\Omega_{\mathrm{hg}}
+=
+\bigcup_{t\in(-T_\ast,T_\ast)}
+\{t\}\times\Sigma_t
+\subset\mathbb R^4.
+\]
+
+\[
+\Sigma_t\subset\mathbb R^3
+\quad
+\text{bounded Lipschitz}.
+\]
+
+\[
+x_-(t),x_+(t)\in\Sigma_t,
+\qquad
+|x_+(t)-x_-(t)|=R.
+\]
+
+\[
+D_{R,t}
+=
+\bigcup_{s\in[0,R]}S_{t,s}.
+\]
+
+\[
+S_{t,s}\cap S_{t,s'}=\varnothing
+\quad
+\text{for }s\neq s'
+\quad
+\text{up to null sets}.
+\]
+
+\[
+|S_{t,s}|\le A_\ast
+\quad
+\text{for a.e. }s\in[0,R].
+\]
+
+\[
+\exists c_{\mathrm{geo}}>0
+\quad
+\text{such that}
+\]
+
+\[
+\int_{D_{R,t}} f(x)\,dx
+\ge
+c_{\mathrm{geo}}
+\int_0^R
+\int_{S_{t,s}} f(x)\,dA(x)\,ds
+\]
+
+\[
+\text{for every nonnegative measurable }f.
+\]
+
+\[
+G\ \text{compact connected Lie group},
+\qquad
+\mathfrak g=\operatorname{Lie}(G).
+\]
+
+\[
+\rho:G\to U(V_\rho)
+\quad
+\text{irreducible unitary representation},
+\qquad
+d\rho\neq0.
+\]
+
+\[
+d\rho:\mathfrak g\to\mathfrak u(V_\rho).
+\]
+
+\[
+\{X^a\}_{a=1}^{\dim\mathfrak g}
+\quad
+\text{orthonormal with respect to an }\operatorname{Ad}\text{-invariant inner product}.
+\]
+
+\[
+\mathcal K_{R,\rho}(t)
+:=
+V_\rho\otimes\mathcal H_{\mathrm{gauge}}(t)\otimes V_\rho^\ast.
+\]
+
+\[
+\mathscr D_t
+:=
+V_\rho\otimes\mathscr D_{\mathrm{gauge}}(t)\otimes V_\rho^\ast
+\subset
+\mathcal K_{R,\rho}(t).
+\]
+
+\[
+\overline{\mathscr D_t}
+=
+\mathcal K_{R,\rho}(t).
+\]
+
+\[
+\mathcal G_t
+:=
+\operatorname{Map}_{\mathrm{adm}}(\Sigma_t,G).
+\]
+
+\[
+h\in\mathcal G_t,
+\qquad
+h_\pm:=h(x_\pm(t)).
+\]
+
+\[
+\mathsf U_t(h):
+\mathcal H_{\mathrm{gauge}}(t)\to\mathcal H_{\mathrm{gauge}}(t)
+\quad
+\text{unitary}.
+\]
+
+\[
+\mathsf V_{R,\rho,t}(h)
+:=
+\rho(h_-)\otimes \mathsf U_t(h)\otimes \rho^\ast(h_+).
+\]
+
+\[
+\mathsf V_{R,\rho,t}(h)
+\text{ is unitary on }
+\mathcal K_{R,\rho}(t)
+=
+V_\rho\otimes\mathcal H_{\mathrm{gauge}}(t)\otimes V_\rho^\ast.
+\]
+
+\[
+\text{The physical charged sector is the gauge-equivariant subspace satisfying the gauge constraint.}
+\]
+
+\[
+\mathcal K_{R,\rho}^{\mathrm{phys}}(t)
+:=
+\left\{
+\Psi\in \mathcal K_{R,\rho}(t):
+\mathsf V_{R,\rho,t}(h)\Psi=\Psi
+\quad
+\forall h\in\mathcal G_t
+\right\}.
+\]
+
+\[
+\mathscr D_t^{\mathrm{phys}}
+:=
+\mathscr D_t\cap \mathcal K_{R,\rho}^{\mathrm{phys}}(t).
+\]
+
+\[
+\overline{\mathscr D_t^{\mathrm{phys}}}
+=
+\mathcal K_{R,\rho}^{\mathrm{phys}}(t).
+\]
+
+\bigskip
+
+\[
+\textbf{9. Casimir flux identity.}
+\]
+
+\[
+C_\rho
+:=
+\sum_{a=1}^{\dim\mathfrak g}
+d\rho(X^a)^\ast d\rho(X^a).
+\]
+
+\[
+d\rho(X^a)^\ast=-d\rho(X^a).
+\]
+
+\[
+d\rho(X^a)^\ast d\rho(X^a)\ge0.
+\]
+
+\[
+C_\rho\ge0.
+\]
+
+\[
+\rho(g)d\rho(X^a)\rho(g)^{-1}
+=
+d\rho(\operatorname{Ad}_gX^a).
+\]
+
+\[
+\sum_a
+d\rho(\operatorname{Ad}_gX^a)^\ast
+d\rho(\operatorname{Ad}_gX^a)
+=
+\sum_a
+d\rho(X^a)^\ast d\rho(X^a).
+\]
+
+\[
+\rho(g)C_\rho\rho(g)^{-1}
+=
+C_\rho.
+\]
+
+\[
+C_\rho\rho(g)=\rho(g)C_\rho
+\qquad
+\forall g\in G.
+\]
+
+\[
+\rho\ \text{irreducible}
+\quad\Longrightarrow\quad
+C_\rho=C_2(\rho)I_{V_\rho}.
+\]
+
+\[
+C_2(\rho)\ge0.
+\]
+
+\[
+C_2(\rho)=0
+\quad\Longrightarrow\quad
+\sum_a\|d\rho(X^a)v\|^2=0
+\quad
+\forall v\in V_\rho.
+\]
+
+\[
+\Longrightarrow\quad
+d\rho(X^a)v=0
+\quad
+\forall a,\ \forall v\in V_\rho.
+\]
+
+\[
+\Longrightarrow\quad
+d\rho(X^a)=0
+\quad
+\forall a.
+\]
+
+\[
+\Longrightarrow\quad
+d\rho=0.
+\]
+
+\[
+d\rho\neq0
+\quad\Longrightarrow\quad
+C_2(\rho)>0.
+\]
+
+\[
+\sum_{a=1}^{\dim\mathfrak g}
+\|(d\rho(X^a)\otimes I\otimes I)\Psi\|^2
+=
+\left\langle
+\Psi,
+\left(
+\sum_a d\rho(X^a)^\ast d\rho(X^a)
+\otimes I\otimes I
+\right)\Psi
+\right\rangle.
+\]
+
+\[
+=
+\langle\Psi,(C_2(\rho)I\otimes I\otimes I)\Psi\rangle.
+\]
+
+\[
+=
+C_2(\rho)\|\Psi\|^2.
+\]
+
+\[
+\text{The orientation of }S_{t,s}\text{ is chosen so that the enclosed endpoint charge is the left }
+V_\rho\text{ factor.}
+\]
+
+\[
+\text{With this convention, the Gauss-law flux through }S_{t,s}
+\text{ acts as }
+d\rho(X^a)\otimes I\otimes I.
+\]
+
+\begin{center}
+\parbox{0.9\linewidth}{
+If the opposite orientation is chosen, the sign changes, but the Casimir norm-square estimate is unchanged.
+}
+\end{center}
+
+\[
+\widehat{\mathcal J}_t^a(s):\mathscr D_t\to\mathcal K_{R,\rho}(t).
+\]
+
+\[
+\widehat{\mathcal J}_{\Lambda,t}^a(s)\Psi
+=
+(d\rho(X^a)\otimes I\otimes I)\Psi
+\qquad
+(\Psi\in\mathscr D_{\Lambda,t}^{\mathrm{phys}})
+\]
+
+\[
+\text{for a.e. }s\in[0,R].
+\]
+
+\[
+\sum_{a=1}^{\dim\mathfrak g}
+\|\widehat{\mathcal J}_t^a(s)\Psi\|^2
+\le
+|S_{t,s}|
+\left\langle
+\Psi,
+\left(
+\int_{S_{t,s}}
+|\widehat E(t,x)\cdot\nu_{t,s}(x)|^2\,dA(x)
+\right)\Psi
+\right\rangle.
+\]
+
+\[
+\sum_a
+\|\widehat{\mathcal J}_t^a(s)\Psi\|^2
+=
+\sum_a
+\|(d\rho(X^a)\otimes I\otimes I)\Psi\|^2.
+\]
+
+\[
+=
+C_2(\rho)\|\Psi\|^2.
+\]
+
+\[
+C_2(\rho)\|\Psi\|^2
+\le
+|S_{t,s}|
+\left\langle
+\Psi,
+\left(
+\int_{S_{t,s}}
+|\widehat E(t,x)\cdot\nu_{t,s}(x)|^2\,dA(x)
+\right)\Psi
+\right\rangle.
+\]
+
+\[
+\left\langle
+\Psi,
+\left(
+\int_{S_{t,s}}
+|\widehat E(t,x)\cdot\nu_{t,s}(x)|^2\,dA(x)
+\right)\Psi
+\right\rangle
+\ge
+\frac{C_2(\rho)}{|S_{t,s}|}\|\Psi\|^2.
+\]
+
+\[
+|S_{t,s}|\le A_\ast.
+\]
+
+\[
+\left\langle
+\Psi,
+\left(
+\int_{S_{t,s}}
+|\widehat E(t,x)\cdot\nu_{t,s}(x)|^2\,dA(x)
+\right)\Psi
+\right\rangle
+\ge
+\frac{C_2(\rho)}{A_\ast}\|\Psi\|^2.
+\]
+
+\[
+|\widehat E(t,x)|^2
+\ge
+|\widehat E(t,x)\cdot\nu_{t,s}(x)|^2.
+\]
+
+\[
+\left\langle
+\Psi,
+\left(
+\int_{D_{R,t}}
+|\widehat E(t,x)|^2\,dx
+\right)\Psi
+\right\rangle
+\ge
+c_{\mathrm{geo}}
+\int_0^R
+\left\langle
+\Psi,
+\left(
+\int_{S_{t,s}}
+|\widehat E(t,x)\cdot\nu_{t,s}(x)|^2\,dA(x)
+\right)\Psi
+\right\rangle ds.
+\]
+
+\[
+\ge
+c_{\mathrm{geo}}
+\int_0^R
+\frac{C_2(\rho)}{A_\ast}\|\Psi\|^2\,ds.
+\]
+
+\[
+=
+\frac{c_{\mathrm{geo}}C_2(\rho)}{A_\ast}R\|\Psi\|^2.
+\]
+
+\bigskip
+
+\[
+\textbf{10. Finite-rank gauge-compatible cutoff.}
+\]
+
+\[
+\Lambda>0.
+\]
+
+\[
+P_\Lambda:
+\mathcal H_{\mathrm{gauge}}(t)\to\mathcal H_{\mathrm{gauge}}(t)
+\quad
+\text{finite-rank orthogonal projection}.
+\]
+
+\[
+P_\Lambda\to I
+\quad
+\text{strongly as }\Lambda\to\infty.
+\]
+
+\[
+P_\Lambda^{R,\rho}
+:=
+I_{V_\rho}\otimes P_\Lambda\otimes I_{V_\rho^\ast}.
+\]
+
+\[
+P_\Lambda^{R,\rho}\to I
+\quad
+\text{strongly on }\mathcal K_{R,\rho}(t).
+\]
+
+\[
+P_\Lambda\mathsf U_t(h)=\mathsf U_t(h)P_\Lambda
+\qquad
+\forall h\in\mathcal G_t.
+\]
+
+\[
+P_\Lambda^{R,\rho}
+=
+I_{V_\rho}\otimes P_\Lambda\otimes I_{V_\rho^\ast}.
+\]
+
+\[
+P_\Lambda^{R,\rho}\mathsf V_{R,\rho,t}(h)
+=
+\mathsf V_{R,\rho,t}(h)P_\Lambda^{R,\rho}.
+\]
+
+\[
+\Psi\in\mathcal K_{R,\rho}^{\mathrm{phys}}(t)
+\quad\Longrightarrow\quad
+P_\Lambda^{R,\rho}\Psi\in \mathcal K_{R,\rho}^{\mathrm{phys}}(t).
+\]
+
+\[
+\mathscr D_{\Lambda,t}^{\mathrm{phys}}
+:=
+P_\Lambda^{R,\rho}\mathscr D_t^{\mathrm{phys}}.
+\]
+
+\[
+\overline{\mathscr D_{\Lambda,t}^{\mathrm{phys}}}
+=
+P_\Lambda^{R,\rho}\mathcal K_{R,\rho}^{\mathrm{phys}}(t).
+\]
+
+\[
+\dim\mathscr D_{\Lambda,t}^{\mathrm{phys}}<\infty.
+\]
+
+\[
+\widehat E_\Lambda(t,x)
+:=
+P_\Lambda^{R,\rho}\widehat E(t,x)P_\Lambda^{R,\rho}.
+\]
+
+\[
+\widehat B_\Lambda(t,x)
+:=
+P_\Lambda^{R,\rho}\widehat B(t,x)P_\Lambda^{R,\rho}.
+\]
+
+\[
+\widehat{\mathcal J}_{\Lambda,t}^a(s)
+:=
+P_\Lambda^{R,\rho}\widehat{\mathcal J}_{t}^a(s)P_\Lambda^{R,\rho}.
+\]
+
+\[
+P_\Lambda^{R,\rho}
+(d\rho(X^a)\otimes I\otimes I)
+=
+(d\rho(X^a)\otimes I\otimes I)
+P_\Lambda^{R,\rho}.
+\]
+
+\[
+\widehat{\mathcal J}_{\Lambda,t}^a(s)\Psi
+=
+(d\rho(X^a)\otimes I\otimes I)\Psi
+\qquad
+(\Psi\in\mathscr D_{\Lambda,t})
+\]
+
+\[
+\text{for a.e. }s\in[0,R].
+\]
+
+\[
+\sum_a
+\|\widehat{\mathcal J}_{\Lambda,t}^a(s)\Psi\|^2
+=
+\sum_a
+\|(d\rho(X^a)\otimes I\otimes I)\Psi\|^2.
+\]
+
+\[
+=
+C_2(\rho)\|\Psi\|^2.
+\]
+
+\[
+\sum_a
+\|\widehat{\mathcal J}_{\Lambda,t}^a(s)\Psi\|^2
+\le
+|S_{t,s}|
+\left\langle
+\Psi,
+\left(
+\int_{S_{t,s}}
+|\widehat E_\Lambda(t,x)\cdot\nu_{t,s}(x)|^2\,dA(x)
+\right)\Psi
+\right\rangle.
+\]
+
+\[
+C_2(\rho)\|\Psi\|^2
+\le
+|S_{t,s}|
+\left\langle
+\Psi,
+\left(
+\int_{S_{t,s}}
+|\widehat E_\Lambda(t,x)\cdot\nu_{t,s}(x)|^2\,dA(x)
+\right)\Psi
+\right\rangle.
+\]
+
+\[
+\left\langle
+\Psi,
+\left(
+\int_{S_{t,s}}
+|\widehat E_\Lambda(t,x)\cdot\nu_{t,s}(x)|^2\,dA(x)
+\right)\Psi
+\right\rangle
+\ge
+\frac{C_2(\rho)}{A_\ast}\|\Psi\|^2.
+\]
+
+\[
+|\widehat E_\Lambda(t,x)|^2
+\ge
+|\widehat E_\Lambda(t,x)\cdot\nu_{t,s}(x)|^2.
+\]
+
+\[
+\left\langle
+\Psi,
+\left(
+\int_{D_{R,t}}
+|\widehat E_\Lambda(t,x)|^2\,dx
+\right)\Psi
+\right\rangle
+\ge
+c_{\mathrm{geo}}
+\int_0^R
+\frac{C_2(\rho)}{A_\ast}\|\Psi\|^2\,ds.
+\]
+
+\[
+=
+\frac{c_{\mathrm{geo}}C_2(\rho)}{A_\ast}R\|\Psi\|^2.
+\]
+
+\[
+\parbox{0.9\linewidth}{
+In this primitive charged-sector formulation, the external color sources are not
+inserted as point-supported distributions in the gauge field.  They are
+implemented only as finite-dimensional endpoint representation factors.
+Therefore no singular local source self-energy counterterm is part of the
+Yang--Mills quadratic form.
+}
+\]
+
+\[
+\mathfrak r_{\Lambda,t}
+:=
+0.
+\]
+
+\[
+\mathfrak r_{\Lambda,t}(\Psi,\Psi)=0
+\qquad
+\forall\Psi\in\mathscr D_{\Lambda,t}^{\mathrm{phys}}.
+\]
+
+\[
+\mathfrak r_{\Lambda,t}(\Psi,\Psi)
+\ge
+0.
+\]
+
+\[
+\kappa_\Lambda:=0.
+\]
+
+\[
+\kappa:=\sup_\Lambda\kappa_\Lambda=0.
+\]
+
+\[
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}:
+\mathscr D_{\Lambda,t}^{\mathrm{phys}}
+\times
+\mathscr D_{\Lambda,t}^{\mathrm{phys}}
+\to\mathbb C.
+\]
+
+\[
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}(\Psi,\Psi)
+:=
+\frac{g^2}{2}
+\left\langle
+\Psi,
+\left(
+\int_{\Sigma_t}
+|\widehat E_\Lambda(t,x)|^2\,dx
+\right)\Psi
+\right\rangle
++
+\frac{1}{2g^2}
+\left\langle
+\Psi,
+\left(
+\int_{\Sigma_t}
+|\widehat B_\Lambda(t,x)|^2\,dx
+\right)\Psi
+\right\rangle.
+\]
+
+\[
+\left\langle
+\Psi,
+\left(
+\int_{\Sigma_t}
+|\widehat E_\Lambda(t,x)|^2\,dx
+\right)\Psi
+\right\rangle
+\ge0.
+\]
+
+\[
+\left\langle
+\Psi,
+\left(
+\int_{\Sigma_t}
+|\widehat B_\Lambda(t,x)|^2\,dx
+\right)\Psi
+\right\rangle
+\ge0.
+\]
+
+\[
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}(\Psi,\Psi)
+\ge0.
+\]
+
+\[
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}
+\quad
+\text{is lower semibounded on }
+\mathscr D_{\Lambda,t}^{\mathrm{phys}}.
+\]
+
+\[
+\dim\mathscr D_{\Lambda,t}^{\mathrm{phys}}<\infty
+\quad\Longrightarrow\quad
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}
+\text{ is closed on }
+P_\Lambda^{R,\rho}\mathcal K_{R,\rho}^{\mathrm{phys}}(t).
+\]
+
+\[
+\exists!\,
+H_{\Lambda,R,\rho}^{\mathrm{phys}}(t)
+=
+H_{\Lambda,R,\rho}^{\mathrm{phys}}(t)^\ast
+\quad
+\text{on }
+P_\Lambda^{R,\rho}\mathcal K_{R,\rho}^{\mathrm{phys}}(t).
+\]
+
+\[
+H_{\Lambda,R,\rho}^{\mathrm{phys}}(t)
+\quad
+\text{is associated with }
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}.
+\]
+
+\bigskip
+
+\[
+\textbf{11. Linear lower bound at finite cutoff.}
+\]
+
+\[
+\widehat{\mathcal J}_{\Lambda,t}^a(s)\Psi
+=
+(d\rho(X^a)\otimes I\otimes I)\Psi
+\qquad
+\Psi\in \mathscr D_{\Lambda,t}^{\mathrm{phys}}.
+\]
+
+\[
+\sum_a
+\|\widehat{\mathcal J}_{\Lambda,t}^a(s)\Psi\|^2
+=
+\sum_a
+\|(d\rho(X^a)\otimes I\otimes I)\Psi\|^2.
+\]
+
+\[
+=
+C_2(\rho)\|\Psi\|^2.
+\]
+
+\[
+\sum_a
+\|\widehat{\mathcal J}_{\Lambda,t}^a(s)\Psi\|^2
+\le
+|S_{t,s}|
+\left\langle
+\Psi,
+\left(
+\int_{S_{t,s}}
+|\widehat E_\Lambda(t,x)\cdot\nu_{t,s}(x)|^2\,dA(x)
+\right)\Psi
+\right\rangle.
+\]
+
+\[
+C_2(\rho)\|\Psi\|^2
+\le
+|S_{t,s}|
+\left\langle
+\Psi,
+\left(
+\int_{S_{t,s}}
+|\widehat E_\Lambda(t,x)\cdot\nu_{t,s}(x)|^2\,dA(x)
+\right)\Psi
+\right\rangle.
+\]
+
+\[
+|S_{t,s}|\le A_\ast.
+\]
+
+\[
+\left\langle
+\Psi,
+\left(
+\int_{S_{t,s}}
+|\widehat E_\Lambda(t,x)\cdot\nu_{t,s}(x)|^2\,dA(x)
+\right)\Psi
+\right\rangle
+\ge
+\frac{C_2(\rho)}{A_\ast}\|\Psi\|^2.
+\]
+
+\[
+|\widehat E_\Lambda(t,x)|^2
+\ge
+|\widehat E_\Lambda(t,x)\cdot\nu_{t,s}(x)|^2.
+\]
+
+\[
+\left\langle
+\Psi,
+\left(
+\int_{D_{R,t}}
+|\widehat E_\Lambda(t,x)|^2\,dx
+\right)\Psi
+\right\rangle
+\ge
+c_{\mathrm{geo}}
+\int_0^R
+\left\langle
+\Psi,
+\left(
+\int_{S_{t,s}}
+|\widehat E_\Lambda(t,x)\cdot\nu_{t,s}(x)|^2\,dA(x)
+\right)\Psi
+\right\rangle
+ds.
+\]
+
+\[
+\ge
+c_{\mathrm{geo}}
+\int_0^R
+\frac{C_2(\rho)}{A_\ast}\|\Psi\|^2\,ds.
+\]
+
+\[
+=
+\frac{c_{\mathrm{geo}}C_2(\rho)}{A_\ast}R\|\Psi\|^2.
+\]
+
+\[
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}(\Psi,\Psi)
+\ge
+\frac{g^2}{2}
+\left\langle
+\Psi,
+\left(
+\int_{D_{R,t}}
+|\widehat E_\Lambda(t,x)|^2\,dx
+\right)\Psi
+\right\rangle.
+\]
+
+\[
+\ge
+\frac{g^2}{2}
+\frac{c_{\mathrm{geo}}C_2(\rho)}{A_\ast}
+R\|\Psi\|^2.
+\]
+
+\[
+\sigma
+:=
+\frac{g^2c_{\mathrm{geo}}C_2(\rho)}{2A_\ast}.
+\]
+
+\[
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}(\Psi,\Psi)
+\ge
+\sigma R\|\Psi\|^2.
+\]
+
+\[
+H_{\Lambda,R,\rho}^{\mathrm{phys}}(t)
+\ge
+\sigma R\,I.
+\]
+
+\[
+E_{0,\Lambda}^{\mathrm{phys}}(R,t)
+:=
+\inf\sigma\!\left(H_{\Lambda,R,\rho}^{\mathrm{phys}}(t)\right).
+\]
+
+\[
+E_{0,\Lambda}^{\mathrm{phys}}(R,t)
+\ge
+\sigma R.
+\]
+
+\[
+\boxed{
+E_{0,\Lambda}^{\mathrm{phys}}(R,t)
+\ge
+\frac{g^2c_{\mathrm{geo}}C_2(\rho)}{2A_\ast}R.
+}
+\]
+
+\[
+\kappa_\Lambda=0
+\qquad
+\forall\Lambda.
+\]
+
+\[
+\sup_\Lambda\kappa_\Lambda=0.
+\]
+
+\[
+\kappa=0.
+\]
+
+\bigskip
+
+\[
+\textbf{12. Cutoff removal.}
+\]
+
+\[
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}
+\overset{\mathrm{Mosco}}{\longrightarrow}
+\mathfrak q_{R,\rho,t}^{\mathrm{phys}}.
+\]
+
+\[
+\Psi_\Lambda\rightharpoonup\Psi
+\quad\Longrightarrow\quad
+\mathfrak q_{R,\rho,t}^{\mathrm{phys}}(\Psi,\Psi)
+\le
+\liminf_{\Lambda\to\infty}
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}(\Psi_\Lambda,\Psi_\Lambda).
+\]
+
+\[
+\forall\Psi\in
+\operatorname{Dom}\!\left(
+\mathfrak q_{R,\rho,t}^{\mathrm{phys}}
+\right)
+\quad
+\exists\Psi_\Lambda\to\Psi
+\]
+
+\[
+\text{such that}
+\qquad
+\mathfrak q_{R,\rho,t}^{\mathrm{phys}}(\Psi,\Psi)
+=
+\lim_{\Lambda\to\infty}
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}(\Psi_\Lambda,\Psi_\Lambda).
+\]
+
+\[
+\mathfrak q_{R,\rho,t}^{\mathrm{phys}}
+\quad
+\text{is closed and lower semibounded}.
+\]
+
+\[
+H_{\Lambda,R,\rho}^{\mathrm{phys}}(t)
+\to
+H_{R,\rho}^{\mathrm{phys}}(t)
+\quad
+\text{in strong resolvent sense}.
+\]
+
+\[
+\Psi\in
+\operatorname{Dom}\!\left(
+\mathfrak q_{R,\rho,t}^{\mathrm{phys}}
+\right).
+\]
+
+\[
+\exists
+\Psi_\Lambda\in\mathscr D_{\Lambda,t}^{\mathrm{phys}},
+\qquad
+\Psi_\Lambda\to\Psi.
+\]
+
+\[
+\mathfrak q_{R,\rho,t}^{\mathrm{phys}}(\Psi,\Psi)
+=
+\lim_{\Lambda\to\infty}
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}(\Psi_\Lambda,\Psi_\Lambda).
+\]
+
+\[
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}(\Psi_\Lambda,\Psi_\Lambda)
+\ge
+\sigma R\|\Psi_\Lambda\|^2.
+\]
+
+\[
+\lim_{\Lambda\to\infty}
+\mathfrak q_{\Lambda,R,\rho,t}^{\mathrm{phys}}(\Psi_\Lambda,\Psi_\Lambda)
+\ge
+\lim_{\Lambda\to\infty}
+\sigma R\|\Psi_\Lambda\|^2.
+\]
+
+\[
+\mathfrak q_{R,\rho,t}^{\mathrm{phys}}(\Psi,\Psi)
+\ge
+\sigma R\|\Psi\|^2.
+\]
+
+\[
+H_{R,\rho}^{\mathrm{phys}}(t)
+\ge
+\sigma R\,I.
+\]
+
+\[
+E_0^{\mathrm{phys}}(R,t)
+:=
+\inf\sigma\!\left(
+H_{R,\rho}^{\mathrm{phys}}(t)
+\right).
+\]
+
+\[
+E_0^{\mathrm{phys}}(R,t)
+\ge
+\sigma R.
+\]
+
+\[
+\boxed{
+E_0^{\mathrm{phys}}(R,t)
+\ge
+\frac{g^2c_{\mathrm{geo}}C_2(\rho)}{2A_\ast}R.
+}
+\]
+
+\bigskip
+
+\[
+\textbf{13. Evolution estimate.}
+\]
+
+\[
+\begin{aligned}
+&\text{Assume that the non-autonomous equation}
+\end{aligned}
+\]
+\[
+\partial_t\Psi(t) = -H_{R,\rho}^{\mathrm{phys}}(t)\Psi(t)
+\]
+\[
+\begin{aligned}
+&\text{generates a contraction evolution family }
+U_{R,\rho}^{\mathrm{phys}}(t,s).
+\end{aligned}
+\]
+
+\[
+H_{R,\rho}^{\mathrm{phys}}(t)
+\ge
+\sigma R\,I.
+\]
+
+\[
+\frac{d}{dt}\|\Psi(t)\|^2
+=
+-2\left\langle
+\Psi(t),
+H_{R,\rho}^{\mathrm{phys}}(t)\Psi(t)
+\right\rangle.
+\]
+
+\[
+\le
+-2\sigma R\|\Psi(t)\|^2.
+\]
+
+\[
+\frac{d}{dt}
+\left(
+e^{2(t-s)\sigma R}\|\Psi(t)\|^2
+\right)
+\le0.
+\]
+
+\[
+e^{2(t-s)\sigma R}\|\Psi(t)\|^2
+\le
+\|\Psi(s)\|^2.
+\]
+
+\[
+\|\Psi(t)\|^2
+\le
+e^{-2(t-s)\sigma R}\|\Psi(s)\|^2.
+\]
+
+\[
+\|\Psi(t)\|
+\le
+e^{-(t-s)\sigma R}\|\Psi(s)\|.
+\]
+
+\[
+\boxed{
+\|U_{R,\rho}^{\mathrm{phys}}(t,s)\|
+\le
+e^{-(t-s)\sigma R}.
+}
+\]
+
+\end{document}
